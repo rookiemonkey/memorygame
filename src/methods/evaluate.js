@@ -22,18 +22,22 @@ function evaluate(obj) {
         if (outputBool) {
 
             // set both the selected box state to 2
-            setCardState(
-                obj, stateCopy,
-                cardsCopy, selectedBoxes,
-                2, 'Correct! Please choose another pair')
+            setTimeout(() => {
+                setCardState(
+                    obj, stateCopy,
+                    cardsCopy, selectedBoxes,
+                    2, 'Correct! Please choose another pair')
+            }, 250)
 
         } else {
 
             // set both the selected box state back to 0
-            setCardState(
-                obj, stateCopy,
-                cardsCopy, selectedBoxes,
-                0, 'Sorry its a wrong pair, Choose another one')
+            setTimeout(() => {
+                setCardState(
+                    obj, stateCopy,
+                    cardsCopy, selectedBoxes,
+                    0, 'Sorry its a wrong pair, Choose another one')
+            }, 250)
 
         }
     } else {
