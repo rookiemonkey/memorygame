@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import click from './methods/click';
 import evaluate from './methods/evaluate';
+import reset from './methods/reset';
 import shuffle from './helpers/shuffle';
 import cards from './helpers/cards';
 import Box from './components/box';
-import Icon from './components/icon';
+import Brain from './components/brain-icon';
+import Heart from './components/heart-icon';
 
 // ===============================================
 // MAIN COMPONENT
@@ -15,7 +17,8 @@ class MemoryGame extends Component {
     this.state = {
       cards: shuffle(cards),
       clickedBox: 0,
-      alert: ''
+      alert: '',
+      lives: 6
     };
   }
 
@@ -36,7 +39,8 @@ class MemoryGame extends Component {
   // RENDER
   // ===============================================
   render() {
-    const { cards: cardsArray, alert } = this.state
+    const { cards: cardsArray, lives, alert } = this.state
+
     const card = cardsArray.map((card, i) => {
       return <Box
         key={i}
@@ -45,26 +49,41 @@ class MemoryGame extends Component {
       ></Box>
     })
 
-    return (
-      <div className="game-container">
+    const hearts = new Array(lives).fill().map(() => {
+      return (<Heart></Heart>)
+    })
 
-        <div className="game-heading-container">
-          <h1 className="game-heading"><Icon ></Icon> Memory Game</h1>
-        </div>
+    if (lives !== 0) {
+      return (
+        <div className="game-container">
 
-        <div className="cards-container-outer">
-          <div className="cards-container-inner">
-            {card}
+          <div className="game-heading-container">
+            <h1 className="game-heading"><Brain /> Memory Game</h1>
+            <h4>Lives: {hearts}</h4>
           </div>
+
+          <div className="cards-container-outer">
+            <div className="cards-container-inner">
+              {card}
+            </div>
+          </div>
+
+          <div className="game-alerts-container">
+            <h4 className="game-alerts">{alert}</h4>
+          </div>
+
         </div>
-
-        <div className="game-alerts-container">
-          <h4 className="game-alerts">{alert}</h4>
-        </div>
-
-      </div>
-    )
-
+      )
+    } else {
+      return (
+        <div className="game-container">
+          <div className="game-heading-container">
+            <h1 className="game-heading">Game Over</h1>
+            <button onClick={reset}>Play Again</button>
+          </div >
+        </div >
+      )
+    }
   }
 }
 

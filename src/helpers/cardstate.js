@@ -2,7 +2,7 @@ import overwrite from '../helpers/overwrite'
 
 const setCardState = (obj, state, cards, selected, stateNum, msg) => {
 
-    // set both the selected box state to 2
+    // set both the selected box state to argument stateNum
     const updateSelectedBoxes = selected.map(card => {
         card.cardState = stateNum;
         return card
@@ -16,11 +16,17 @@ const setCardState = (obj, state, cards, selected, stateNum, msg) => {
     state.clickedBox = 0
     const clickedBox = state.clickedBox
 
+    let hearts = 0;
+    stateNum !== 2
+        ? hearts = state.lives - 1
+        : hearts = state.lives
+
     // update the state
     obj.setState({
         clickedBox: clickedBox,
         cards: cards,
-        alert: msg
+        alert: msg,
+        lives: hearts
     })
 
 }
