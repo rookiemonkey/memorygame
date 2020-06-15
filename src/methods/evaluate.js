@@ -27,7 +27,7 @@ function evaluate(obj) {
                     obj, stateCopy,
                     cardsCopy, selectedBoxes,
                     2, 'Correct! Please choose another pair')
-            }, 250)
+            }, 300)
 
         } else {
 
@@ -36,13 +36,13 @@ function evaluate(obj) {
                 setCardState(
                     obj, stateCopy,
                     cardsCopy, selectedBoxes,
-                    0, 'Sorry its a wrong pair, Choose another one')
-            }, 250)
+                    0, "Sorry it's a wrong pair, Choose another one")
+            }, 300)
 
         }
     } else {
 
-        obj.setState({ alert: 'Choose another box that your think is a pair...' })
+        obj.setState({ alert: 'Choose another box that you think is a pair...' })
 
     }
 }

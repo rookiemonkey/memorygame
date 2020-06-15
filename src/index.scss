@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #2f2f2f;
+  color:  whitesmoke;
+}
+
+.chosen {
+  transform: scale(1);
+}
+
+.correct {
+  transform: scale(0.75);
+}
+
+.game-container {
+
+  .game-heading-container {
+    text-align: center;
+  }
+
+
+  .cards-container-outer {
+    display: flex;
+    justify-content: center;
+
+     .cards-container-inner {
+      width: 417px;
+      display: flex;
+      flex-flow: row wrap;
+
+    .card {
+      border-radius: 10px;
+      height: 100px;
+      width: 100px;
+      margin: 0.5%;
+      transition: all;
+      transition-duration: 250ms;
+
+    }
+
+    span {
+      font-size: 10px;
+    }
+
+  }
+  }
+ 
+
+  .game-alerts-container {
+    text-align: center;
+  }
+
+}
+
+
+
+
+

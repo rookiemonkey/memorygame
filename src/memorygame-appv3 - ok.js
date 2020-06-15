@@ -4,6 +4,7 @@ import evaluate from './methods/evaluate';
 import shuffle from './helpers/shuffle';
 import cards from './helpers/cards';
 import Box from './components/box';
+import Icon from './components/icon';
 
 // ===============================================
 // MAIN COMPONENT
@@ -45,12 +46,22 @@ class MemoryGame extends Component {
     })
 
     return (
-      <div>
-        <h1>Memory Game</h1>
-        <div className="card-container">
-          {card}
+      <div className="game-container">
+
+        <div className="game-heading-container">
+          <h1 className="game-heading"><Icon ></Icon> Memory Game</h1>
         </div>
-        <h4>{alert}</h4>
+
+        <div className="cards-container-outer">
+          <div className="cards-container-inner">
+            {card}
+          </div>
+        </div>
+
+        <div className="game-alerts-container">
+          <h4 className="game-alerts">{alert}</h4>
+        </div>
+
       </div>
     )
 
