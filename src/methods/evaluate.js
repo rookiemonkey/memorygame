@@ -36,6 +36,10 @@ function evaluate(obj) {
                 0, 'Sorry its a wrong pair, Choose another one')
 
         }
+    } else {
+
+        obj.setState({ alert: 'Choose another box that your think is a pair...' })
+        
     }
 }
 
