@@ -1,4 +1,4 @@
-import overwrite from '../helpers/overwrite'
+import setCardState from '../helpers/cardstate'
 
 function evaluate(obj) {
     if (obj.state.clickedBox === 2) {
@@ -20,42 +20,21 @@ function evaluate(obj) {
         })
 
         if (outputBool) {
+
             // set both the selected box state to 2
-            const updateSelectedBoxes = selectedBoxes.map(card => { card.cardState = 2; return card })
-
-            // helper: to overwrite the chosen boxes
-            overwrite(cardsCopy, updateSelectedBoxes, 0)
-            overwrite(cardsCopy, updateSelectedBoxes, 1)
-
-            // reset the click counter to 0
-            stateCopy.clickedBox = 0
-            const clickedBox = stateCopy.clickedBox
-
-            // update the state
-            obj.setState({
-                clickedBox: clickedBox,
-                cards: cardsCopy,
-                alert: 'Correct! Please choose another pair'
-            })
+            setCardState(
+                obj, stateCopy,
+                cardsCopy, selectedBoxes,
+                2, 'Correct! Please choose another pair')
 
         } else {
+
             // set both the selected box state back to 0
-            const updateSelectedBoxes = selectedBoxes.map(card => { card.cardState = 0; return card })
+            setCardState(
+                obj, stateCopy,
+                cardsCopy, selectedBoxes,
+                0, 'Sorry its a wrong pair, Choose another one')
 
-            // helper: to overwrite the chosen boxes
-            overwrite(cardsCopy, updateSelectedBoxes, 0)
-            overwrite(cardsCopy, updateSelectedBoxes, 1)
-
-            // reset the click counter to 0
-            stateCopy.clickedBox = 0
-            const clickedBox = stateCopy.clickedBox
-
-            // update the state
-            obj.setState({
-                clickedBox: clickedBox,
-                cards: cardsCopy,
-                alert: 'Wrong Boxes.. Please choose another pair'
-            })
         }
     }
 }
