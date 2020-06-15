@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import click from './methods/click';
 import evaluate from './methods/evaluate';
-import shuffle from './methods/shuffle';
+import shuffle from './helpers/shuffle';
 import Box from './components/box';
 
 // ===============================================

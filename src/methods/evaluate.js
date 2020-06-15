@@ -1,3 +1,5 @@
+import overwrite from '../helpers/overwrite'
+
 function evaluate(obj) {
     if (obj.state.clickedBox === 2) {
         const stateCopy = Object.assign({}, obj.state)
@@ -21,19 +23,9 @@ function evaluate(obj) {
             // set both the selected box state to 2
             const updateSelectedBoxes = selectedBoxes.map(card => { card.cardState = 2; return card })
 
-            // loop to overweite the selected box 1
-            for (let card of cardsCopy) {
-                if (card.id === updateSelectedBoxes[0].id) {
-                    cardsCopy.splice(cardsCopy.indexOf(card), 1, updateSelectedBoxes[0])
-                }
-            }
-
-            // loop to overweite the selected box 2
-            for (let card of cardsCopy) {
-                if (card.id === updateSelectedBoxes[1].id) {
-                    cardsCopy.splice(cardsCopy.indexOf(card), 1, updateSelectedBoxes[1])
-                }
-            }
+            // helper: to overwrite the chosen boxes
+            overwrite(cardsCopy, updateSelectedBoxes, 0)
+            overwrite(cardsCopy, updateSelectedBoxes, 1)
 
             // reset the click counter to 0
             stateCopy.clickedBox = 0
@@ -50,19 +42,9 @@ function evaluate(obj) {
             // set both the selected box state back to 0
             const updateSelectedBoxes = selectedBoxes.map(card => { card.cardState = 0; return card })
 
-            // loop to overwrite the selected box 1
-            for (let card of cardsCopy) {
-                if (card.id === updateSelectedBoxes[0].id) {
-                    cardsCopy.splice(cardsCopy.indexOf(card), 1, updateSelectedBoxes[0])
-                }
-            }
-
-            // loop to overweite the selected box 2
-            for (let card of cardsCopy) {
-                if (card.id === updateSelectedBoxes[1].id) {
-                    cardsCopy.splice(cardsCopy.indexOf(card), 1, updateSelectedBoxes[1])
-                }
-            }
+            // helper: to overwrite the chosen boxes
+            overwrite(cardsCopy, updateSelectedBoxes, 0)
+            overwrite(cardsCopy, updateSelectedBoxes, 1)
 
             // reset the click counter to 0
             stateCopy.clickedBox = 0
