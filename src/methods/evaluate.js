@@ -39,7 +39,7 @@ function evaluate(obj) {
     } else {
 
         obj.setState({ alert: 'Choose another box that your think is a pair...' })
-        
+
     }
 }
 
