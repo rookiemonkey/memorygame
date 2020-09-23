@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/monserrat.ttf');
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -21,34 +23,32 @@ body {
     text-align: center;
   }
 
-
   .cards-container-outer {
     display: flex;
     justify-content: center;
 
-     .cards-container-inner {
+    .cards-container-inner {
       width: 417px;
       display: flex;
+      justify-content: center;
       flex-flow: row wrap;
 
-    .card {
-      border-radius: 10px;
-      height: 100px;
-      width: 100px;
-      margin: 0.5%;
-      transition: all;
-      transition-duration: 250ms;
+      .card {
+        border-radius: 10px;
+        height: 100px;
+        width: 100px;
+        margin: 0.5%;
+        transition: all;
+        transition-duration: 250ms;
 
+      }
+
+      span {
+        font-size: 10px;
+      }
     }
-
-    span {
-      font-size: 10px;
-    }
-
-  }
   }
  
-
   .game-alerts-container {
     text-align: center;
   }
@@ -62,9 +62,3 @@ body {
   }
 
 }
-
-
-
-
-
-
