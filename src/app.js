@@ -34,6 +34,9 @@ class MemoryGame extends Component {
     evaluate(this);
   }
 
+  resetGame = () => {
+    reset(this);
+  }
 
   // ===============================================
   // RENDER
@@ -79,7 +82,7 @@ class MemoryGame extends Component {
         <div className="game-container">
           <div className="game-heading-container">
             <h1 className="game-heading">Game Over</h1>
-            <button onClick={reset}>Play Again</button>
+            <button onClick={this.resetGame}>Play Again</button>
           </div >
         </div >
       )
