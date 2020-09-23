@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Memorygame from './memorygame-appv3 - ok';
+import Memorygame from './app';
 import './index.scss'; // global css
 
 ReactDOM.render(
@@ -9,4 +9,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

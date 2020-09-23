@@ -49,8 +49,8 @@ class MemoryGame extends Component {
       ></Box>
     })
 
-    const hearts = new Array(lives).fill().map(() => {
-      return (<Heart></Heart>)
+    const hearts = new Array(lives).fill().map((obj, ind) => {
+      return <Heart key={ind} />
     })
 
     if (lives !== 0) {

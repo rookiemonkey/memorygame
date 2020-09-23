@@ -42,7 +42,7 @@ function evaluate(obj) {
         }
     } else {
 
-        obj.setState({ alert: 'Choose another box that you think is a pair...' })
+        obj.setState({ alert: 'Choose another box that you think its pair...' })
 
     }
 }
