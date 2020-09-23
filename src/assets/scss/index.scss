@@ -25,7 +25,9 @@ body {
 
   .cards-container-outer {
     display: flex;
+    min-height: 70vh;
     justify-content: center;
+    align-items: center;
 
     .cards-container-inner {
       width: 417px;
