@@ -15,6 +15,7 @@ body {
 
 .correct {
   transform: scale(0.75);
+  cursor: not-allowed !important;
 }
 
 .game-container {
@@ -42,7 +43,7 @@ body {
         margin: 0.5%;
         transition: all;
         transition-duration: 250ms;
-
+        cursor: pointer;
       }
 
       span {
